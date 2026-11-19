@@ -1,0 +1,32 @@
+{
+  "name": "bunbun-sveltekit-ssr",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "build:node": "ADAPTER=node vite build",
+    "build:vercel": "ADAPTER=vercel vite build",
+    "build:cloudflare": "ADAPTER=cloudflare vite build",
+    "build:netlify": "ADAPTER=netlify vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "start": "node build/index.js"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-cloudflare": "^4.7.2",
+    "@sveltejs/adapter-netlify": "^4.2.4",
+    "@sveltejs/adapter-node": "^5.2.6",
+    "@sveltejs/adapter-vercel": "^5.4.5",
+    "@sveltejs/kit": "^2.7.0",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

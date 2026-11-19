@@ -1,0 +1,17 @@
+services:
+  sveltekit-ssr:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      PUBLIC_API_BASE: "${PUBLIC_API_BASE:-https://bunbunserver.my.id}"
+      PUBLIC_SITE_TITLE: "${PUBLIC_SITE_TITLE:-}"
+      PUBLIC_AD_SCRIPT_URL: "${PUBLIC_AD_SCRIPT_URL:-/ad.js}"
+      PROTOCOL_HEADER: x-forwarded-proto
+      HOST_HEADER: x-forwarded-host
+      ADDRESS_HEADER: x-forwarded-for

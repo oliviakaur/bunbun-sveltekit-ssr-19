@@ -1,0 +1,16 @@
+# Cloudflare Workers Static Assets configuration for @sveltejs/adapter-cloudflare
+# Build command: ADAPTER=cloudflare npm run build
+# Deploy command: npx wrangler deploy
+name = "bunbun-sveltekit-ssr"
+main = ".svelte-kit/cloudflare/_worker.js"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+binding = "ASSETS"
+directory = ".svelte-kit/cloudflare"
+
+[vars]
+PUBLIC_API_BASE = "https://bunbunserver.my.id"
+PUBLIC_SITE_TITLE = ""
+PUBLIC_AD_SCRIPT_URL = "/ad.js"

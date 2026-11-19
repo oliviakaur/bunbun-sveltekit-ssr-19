@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: bunbun-sveltekit-ssr
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    autoDeploy: true
+    envVars:
+      - key: PUBLIC_API_BASE
+        value: https://bunbunserver.my.id
+      - key: PUBLIC_SITE_TITLE
+        value: ""
+      - key: PUBLIC_AD_SCRIPT_URL
+        value: /ad.js
+      - key: PROTOCOL_HEADER
+        value: x-forwarded-proto
+      - key: HOST_HEADER
+        value: x-forwarded-host
+      - key: ADDRESS_HEADER
+        value: x-forwarded-for
+      - key: PORT
+        value: "3000"
