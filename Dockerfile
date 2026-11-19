@@ -1,6 +1,6 @@
 # Multi-stage production Dockerfile for @sveltejs/adapter-node
 # Supports Render.com, Azure App Service (Web App for Containers), Dokploy, and VPS
-FROM node:20-alpine AS builder
+FROM node:26-alpine AS builder
 
 WORKDIR /app
 COPY package*.json ./
